@@ -9,6 +9,17 @@ const addTask = () => {
             addedTask.textContent = taskText;
             taskList.appendChild(addedTask);
             taskInput.value = "";
+
+            const deleteBtn = document.createElement('button');
+            deleteBtn.textContent = "Delete";
+            deleteBtn.className = "deleteBtn";
+            deleteBtn.onclick = () => taskList.removeChild(addedTask);
+            addedTask.appendChild(deleteBtn);
     }
 }
 addTaskBtn.addEventListener("click", addTask);
+taskInput.addEventListener("keydown", (e) =>{
+    if (e.key === "Enter"){
+        addTask();
+    }
+});
