@@ -11,10 +11,12 @@ const addTask = () => {
             taskInput.value = "";
 
             const deleteBtn = document.createElement('button');
-            deleteBtn.textContent = "Delete";
+            deleteBtn.textContent = "❌";
             deleteBtn.className = "deleteBtn";
             deleteBtn.onclick = () => taskList.removeChild(addedTask);
             addedTask.appendChild(deleteBtn);
+
+           
     }
 }
 addTaskBtn.addEventListener("click", addTask);
